@@ -30,9 +30,6 @@
 ![image](day-02/day-02-vm-alias.png)
 
 
-
-
-
 ## What worked
 Copying the public-key after connecting to server from windows.
 
