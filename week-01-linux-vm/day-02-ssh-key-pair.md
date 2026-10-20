@@ -9,6 +9,11 @@
 1. Generate ssh key-pair in my Windows Machine
     
     PowerShell: `ssh-keygen -f ./.ssh/vm-key -t ed25519 -C "biancardc24@gmail.com"`
+
+        Private key stays on my machine only: 
+        
+    ![image](day-02/day-02-private-key-win-only.png)
+
 2. Send public-key file to VM to ~/.ssh/authorized_keys
 
     * Access VM from Windows
@@ -17,6 +22,15 @@
     * Copy content from vm-key.pub to authorized_keys file: `cat vm-key.pub >> authorized_keys`
 3. Create a connection to VM from host using key configured
  `ssh bianca@192.168.56.102 -i .\.ssh\vm-key`
+
+ ![image](day-02/day-02-connect-to-vm-with-ssh-key.png)
+
+4. Create alias and access VM using [Config file](day-02/config)
+
+![image](day-02/day-02-vm-alias.png)
+
+
+
 
 
 ## What worked

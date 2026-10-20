@@ -1,0 +1,5 @@
+Host linux-vm              # Use to login
+HostName 192.168.56.102       
+IdentitiesOnly yes          
+IdentityFile ~/.ssh/vm-key   
+User bianca
