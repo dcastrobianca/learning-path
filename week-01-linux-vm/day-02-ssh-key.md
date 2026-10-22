@@ -39,3 +39,6 @@ Copying the public-key after connecting to server from windows.
 
 ## How I solved it
 1. Add `-i file/path`to ssh command
+
+## Link for doc
+https://wiki.ubuntu.com/SSH/OpenSSH/Keys

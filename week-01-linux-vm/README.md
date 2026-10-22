@@ -26,7 +26,7 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 |---|---|---|---|---|
 | Mon | Ubuntu Server VM running | `hostnamectl` and `ip a` output recorded; VM survives a reboot; internet access and access from Windows confirmed | Done | `day-01-ubuntu-vm.md` |
 | Tue | SSH key login from Windows to the VM | `ssh <vm>` logs in without a password prompt | Done | `day-02-ssh-keys.md` |
-| Wed | Non-root sudo user and hardened ssh | Root login is refused; the new user logs in with the key; system updated | Planned | `day-03-hardening.md` |
+| Wed | VM accepts key-only ssh login | Root login is refused; A login attempt that skips the key is rejected without being offered a password; system updated | Done | `day-03-ssh-key-only-login.md` |
 | Thu | nginx managed with systemd | Page loads from Windows; stops loading after `stop`; loads again after `start`; both events visible in the logs | Planned | `day-04-nginx.md` |
 | Fri | Break it and fix it | Deliberate nginx config error found from tools, fixed and documented; this README reviewed | Planned | `day-05-break-and-fix.md` |
 
