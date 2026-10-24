@@ -59,7 +59,8 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 
 4. Configure Host-only adapter
     * Power VM off
-    * Add adapter from VirtualBox Ui settings
+    * Add adapter from VirtualBox Ui settings:
+        Ctrl+H -> create the adapter -> DHCP server enabled
     * Check new adapter, normally enp0s8. It was created but not configured yet, so VM is still not accessible from windows-machine. 
 
         `ip a`
@@ -70,7 +71,7 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 
     * Create a host-only configuration file.
 
-        Files here works like building blocks and the higher the numver, the latter it will be applied and could overwrite configurations done in previous files
+        Files here works like building blocks and the higher the number, the latter it will be applied and could overwrite configurations done in previous files
 
         `sudo nano 01-host-only-adapter-config.yaml`
 
@@ -134,9 +135,9 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 
         `nano pub-key.pub`
 
-    * Append `authorized_key` with temporary file content
+    * Append `authorized_keys` with temporary file content
 
-        `cat pub-key.pub >> authorized_key`
+        `cat pub-key.pub >> authorized_keys`
 
     * Access VM using private key.
 
@@ -165,7 +166,7 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
         `cd /etc/ssh/sshd_config.d/`
         
     * Add config file
-        `sudo nano ssh-key-pair-login-only.conf`
+        `sudo nano 00-ssh-key-pair-login-only.conf`
 
         ```
             PermitRootLogin no
@@ -207,26 +208,28 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 
     * Start and check access in browser
 
-        `sudo systemctl stop nginx`
+        `sudo systemctl start nginx`
 
     * Check service-manager logs
 
         `journalctl -u nginx`
 
 16. Break Nginx config and see it in logs
-    * Access file and messe up with it
+    * Access file and introduce error
 
         `sudo nano /etc/nginx/nginx.conf`
 
     * Reload configuration and check that service is still available from browser
 
-        `nginy -s reload`
+        `sudo nginx -s reload`
 
     * Restart service and see that service ins now unavailable
 
         `sudo systemctl restart nginx`
 
     * Check error
+
+        `nginx -t`
 
         `journalctl -u nginx`
     
