@@ -1,6 +1,7 @@
 # Day 02: Connect with ssh with a key pair.
 
 **Outcome:** Connect from the host to the VM over ssh with a key pair.
+
 **Done when:** 
 * ssh <vm> logs in without a password prompt
 * list of the exact commands and where the key lives.
@@ -10,7 +11,7 @@
     
     PowerShell: `ssh-keygen -f ./.ssh/vm-key -t ed25519 -C "biancardc24@gmail.com"`
 
-        Private key stays on my machine only: 
+    Private key stays on my machine only: 
         
     ![image](day-02/day-02-private-key-win-only.png)
 

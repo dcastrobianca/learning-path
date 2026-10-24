@@ -1,7 +1,7 @@
 # Week 1: Linux VM
 
 **Dates:** Oct 19 - Oct 23, 2026
-**Status:** In progress
+**Status:** Done
 
 ## Goal
 
@@ -28,28 +28,26 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 | Tue | SSH key login from Windows to the VM | `ssh <vm>` logs in without a password prompt | Done | `day-02-ssh-keys.md` |
 | Wed | VM accepts key-only ssh login | Root login is refused; A login attempt that skips the key is rejected without being offered a password; system updated | Done | `day-03-ssh-key-only-login.md` |
 | Thu | nginx managed with systemd | Page loads from Windows; stops loading after `stop`; loads again after `start`; both events visible in the logs | Done | `day-04-nginx.md` |
-| Fri | Break it and fix it | Deliberate nginx config error found from tools, fixed and documented; this README reviewed | Planned | `day-05-break-and-fix.md` |
+| Fri | Break it and fix it | Deliberate nginx config error found from tools, fixed and documented; | Done | `day-05-break-and-fix.md` |
 
 ## What I learned
 
-_To be completed at the end of the week._
 
 - Key concepts:
+    * Difference of network adapter to connect to VM. NAT enable VM to access internet, Host-only creates a network to make VM accessible from my machine. 
+    * Order of apt commands to upgrade system. 
+    * SSH server and it's configurations.
 - Commands I now know without looking them up:
+    * `sudo service <service> start/stop/restart`
+    * `sudo apt update && sudo apt upgrade`
+    * `journalctl -u <service>`
+    * `ssh <user>@<ip> -i ssh-private-key-file-path`
 - What I got wrong first:
+    * NAT and Host-only adapter don'e enable VM to receive request from internet.
 
-## What broke and how I fixed it
-
-_Filled in from the daily logs._
-
-| Day | What broke | How I found it | Fix |
-|---|---|---|---|
-|  |  |  |  |
 
 ## Weekly review
 
-_To be completed on Sunday._
-
-- Planned outcomes met: _x of 5_
-- Time spent: _hands-on / documentation_
+- Planned outcomes met: 5 of 5.
 - What to change next week:
+    * more clear expected outcome and definition of done.

@@ -92,7 +92,8 @@ Tools are added to this list when they appear in a committed session, not before
 
 | Week | Theme | Status |
 |---|---|---|
-| 1 | Linux VM: build, secure, run a web server, break and fix it | In progress |
+| 1 | Linux VM: build, secure, run a web server, break and fix it | Done |
+
 
 ## About
 

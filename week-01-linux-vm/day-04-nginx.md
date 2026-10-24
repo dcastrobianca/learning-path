@@ -28,7 +28,7 @@
 
 ![page-available-after-start](day-04/day-04-page-available-after-start.png)
 
-5. Check service manager logs for start and stop request
+5. Check service manager logs for start and stop request: `journalctl -u nginx`
 
 ![service-manager-logs](day-04/day-04-service-manager-logs.png)
 

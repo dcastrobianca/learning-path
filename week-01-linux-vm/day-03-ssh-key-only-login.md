@@ -1,6 +1,7 @@
 # Day 03: key-only ssh login
 
 **Outcome:** The VM accepts ssh logins only with your key. Password login is switched off, you can explain why root cannot log in, and the installed packages are up to date.
+
 **Done when:** 
 1. ssh <user>@<vm-ip> with the key works. 
 2. A login attempt that skips the key is rejected without being offered a password. 
