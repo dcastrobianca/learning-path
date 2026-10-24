@@ -20,11 +20,11 @@
     ![page-from-windows](day-04/day-04-pag-from-windows.png)
 
 
-5. Stop Nginx `sudo systemctl start nginx`
+5. Stop Nginx `sudo systemctl stop nginx`
 
 ![page-unavailable-after-stop.png](day-04/day-04-page-unavailable-after-stop.png)
 
-4. Start Nginx `sudo service nginx start`
+4. Start Nginx `sudo systemctl start nginx`
 
 ![page-available-after-start](day-04/day-04-page-available-after-start.png)
 

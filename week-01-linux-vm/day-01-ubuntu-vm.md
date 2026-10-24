@@ -1,4 +1,4 @@
-# Day NN: Ubuntu Server VM running
+# Day 01: Ubuntu Server VM running
 
 **Outcome:**  Ubuntu Server VM with internet access and a network reachable from Windows
 
@@ -20,7 +20,9 @@
 #### Add NAT adapter to access internet
 
 1. VM Settings -> Network -> Adapter 1 : already configured 
-2. Test internet connection: `curl `
+2. Test internet connection: `curl https://www.example.com/`
+
+![curl-command](day-01/day-01-curl.png)
 
 #### Host-only  adapter to access VM from Windows machine
 
@@ -36,7 +38,7 @@
 
  ![image](day-01/day-01-adapter-2.png)
 
- 4. run `ip a` to check the new interface  shows up and get ip address
+ 4. Run `ip a` to check the new interface  shows up and get ip address
 
  ![image](day-01/day-01-ip-a-host-only-configured.png)
 
@@ -55,6 +57,11 @@
 
     * Apply changes : `sudo netplan apply`
 
+6. Change system hostname
+    * `sudo hostnamectl set-hostname my-first-server`
+
+    ![image](day-01/day-01-hostnamectl.png)
+
 #### SSH access
 
 1. Check if SSH is running: `systemctl status ssh`
@@ -64,6 +71,9 @@
 ![image](day-01/day-01-ssh-running.png)
 
 4. Acsess from windows powershell `ssh <user>@ip`. Exemple: ` ssh bianca@192.168.56.102`
+
+### Reboot
+After restarting VM, it keept all previous configurations and I could still access it using ssh connection from my windows-machine.
 
 ## What worked
 1. Add adpter configuration, restaring VM and connection to it from windows with IP from `ip a`

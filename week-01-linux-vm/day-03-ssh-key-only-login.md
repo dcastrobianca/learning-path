@@ -13,16 +13,22 @@
 
 ### Restric password login in SSH
 1. Verify I can use ssh conection with password
+
 ![before config](day-03/day-03-before-config.png )
-2. Acces /etc/ssh/sshd_config
+
+2. Access file with sudo privileges `/etc/ssh/sshd_config`
+
 3. Change configuration:
+
 ```
     PermitRootLogin no
     PasswordAuthentication no
     # ChallengeResponseAuthentication is a deprecated, replaced by:
     KbdInteractiveAuthentication no
-    UsePAM no
 ```
+
+On a standard Ubuntu installation, the root account is locked by default and has no active password set. So root login was blocked even before this configuration, but as this could be changed. I  added this configuration make sure root cannot use password to login even if one is set in the future.
+
 4. Restart ssh service `sudo systemctl restart ssh`
 
 5. Verify ssh connection to VM using password and key

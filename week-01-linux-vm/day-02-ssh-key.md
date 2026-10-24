@@ -9,7 +9,7 @@
 ## What I did
 1. Generate ssh key-pair in my Windows Machine
     
-    PowerShell: `ssh-keygen -f ./.ssh/vm-key -t ed25519 -C "biancardc24@gmail.com"`
+    PowerShell: `ssh-keygen -f ./.ssh/vm-key -t ed25519`
 
     Private key stays on my machine only: 
         
