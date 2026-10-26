@@ -25,19 +25,22 @@ The method follows a simple weekly cycle.
 3. **Every session ends with a commit** to this repository.
 4. **Fridays include deliberate debugging.** I break something on purpose and fix it, to build troubleshooting muscle memory.
 5. **Sunday: review.** I compare plan and reality, then adjust the next week.
+6. **Every week README ends with an "On repeat" section** that lists every command of the week. I check it by rebuilding the setup from the notes alone.
+
+Application code is not the focus of this repository. For the practice application I generate a small Spring Boot service with AI and review it myself, so my time goes into running, securing and fixing it.
 
 Theory (system design and software architecture) and German language study run alongside this, outside the repository.
 
 ## Roadmap (about six months)
 
-| Phase | Weeks | Hands-on focus | Status |
-|---|---|---|---|
-| 1. Foundations | 1-6 | Linux VM, manual deployment, Azure basics, Terraform, Docker, GitHub Actions | In progress |
-| 2. Kubernetes | 7-14 | Local Kubernetes, then AKS provisioned with Terraform and deployed from CI | Planned |
-| 3. Platform | 15-22 | Helm, Argo CD, dev and staging environments, observability, a multi-tenant Spring Boot service on the platform | Planned |
-| 4. Hardening and documentation | 23-26 | Secrets management, cost cleanup, architecture documentation, project walkthrough | Planned |
+| Phase | Weeks | Dates | Hands-on focus | Status |
+|---|---|---|---|---|
+| 1. Foundations | 1-7 | Oct 19 - Dec 6 | Linux VM and manual deployment of a small Spring Boot app with PostgreSQL (3 weeks), Azure basics, Terraform, Docker, GitHub Actions | In progress |
+| 2. Kubernetes | 8-15 | Dec 7 - Jan 31 | Local Kubernetes, then AKS provisioned with Terraform and deployed from CI (two holiday weeks at half load) | Planned |
+| 3. Platform | 16-23 | Feb 1 - Mar 28 | Helm, Argo CD, dev and staging environments, observability, a multi-tenant Spring Boot service on the platform | Planned |
+| 4. Hardening and documentation | 24-27 | Mar 29 - Apr 25 | Secrets management, cost cleanup, architecture documentation, project walkthrough | Planned |
 
-The detailed plan is re-planned weekly, so this table shows direction rather than a fixed schedule.
+The detailed plan is re-planned weekly, so this table shows direction rather than a fixed schedule. For example, the Linux VM work grew from one week to three when I decided to practice with a realistic application (a database, an API key and an external service) instead of a hello-world, and everything after it moved one week later.
 
 ## Repository structure
 
@@ -45,9 +48,11 @@ The detailed plan is re-planned weekly, so this table shows direction rather tha
 .
 ├── README.md                  This file
 ├── week-01-linux-vm/
-│   ├── README.md              Weekly summary: goal, outcome, lessons learned
+│   ├── README.md              Weekly summary: goal, outcome, lessons learned, "On repeat"
 │   ├── day-01-ubuntu-vm.md    One log per session
-│   ├── day-02-ssh-keys.md
+│   ├── day-01/                Screenshots and files for that session
+│   ├── day-02-ssh-key.md
+│   ├── day-02/
 │   └── ...
 ├── week-02-.../
 └── ...
@@ -56,7 +61,7 @@ The detailed plan is re-planned weekly, so this table shows direction rather tha
 Conventions:
 
 - One folder per week, named `week-NN-topic`.
-- One log file per session, named `day-NN-topic.md`.
+- One log file per session, named `day-NN-topic.md`, with a matching `day-NN/` folder for its screenshots and small files.
 - Configuration files, scripts and Terraform code live next to the log that introduced them, and move into a dedicated folder once a project outgrows a single week.
 - No secrets, keys or credentials are ever committed.
 
@@ -84,20 +89,22 @@ Commands and configuration, in order.
 
 ## Tools and technologies
 
-Linux (Ubuntu Server), SSH, nginx, VirtualBox, Azure, Terraform, Docker, Docker Compose, GitHub Actions, Kubernetes (local and AKS), Helm, Argo CD, Spring Boot, PostgreSQL.
+Used so far: Ubuntu Server, VirtualBox, netplan, apt, SSH, systemd and journalctl, nginx.
 
-Tools are added to this list when they appear in a committed session, not before.
+Planned: PostgreSQL, Spring Boot, Azure, Terraform, Docker, Docker Compose, GitHub Actions, Kubernetes (local and AKS), Helm, Argo CD.
+
+A tool moves to the first list when it appears in a committed session, not before.
 
 ## Progress
 
 | Week | Theme | Status |
 |---|---|---|
 | 1 | Linux VM: build, secure, run a web server, break and fix it | Done |
-
+| 2 | Linux VM, part 2: PostgreSQL, a small Spring Boot app, run as a systemd service | In progress |
+| 3 | Linux VM, part 3: nginx reverse proxy, firewall, backup and restore, failure drills | Planned |
 
 ## About
 
 Based in Nuremberg, Germany. Backend engineer by background, now building depth in cloud and platform engineering.
 
-- LinkedIn: www.linkedin.com/in/dcastrobianca/
-- Contact: biancardc24@gmail.com
+- LinkedIn: [linkedin.com/in/dcastrobianca](https://www.linkedin.com/in/dcastrobianca/)
