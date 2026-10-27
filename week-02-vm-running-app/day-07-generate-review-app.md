@@ -30,21 +30,21 @@
             CREATE DATABASE expense_app_db OWNER expense_app;
         ```
 
-        As application will user FLyway, should not create tables manually, as it would generate conflic with the tool and would make the application not start. 
+        As application will user Flyway, should not create tables manually, as it would generate conflict with the tool and would make the application not start. 
 
     * Add db password to system environment variables 
 
 4. Start Application up
     * Send basic requests
-        * GET \health
+        * GET /actuator/health
             ![health-get-request](day-07/day-07-health-request.png)
 
-        * POST \expense with valid parameters
+        * POST /expense with valid parameters
             ![post-expense-valid](day-07/day-07-expense-post-request.png)
 
-        * POST \expense with invalid currency
+        * POST /expense with invalid currency
             ![post-expense-bad-request](day-07/day-07-bad-request.png)
-        * GET \expense
+        * GET /expense
             ![get-expense](day-07/day-07-expense-get-request.png)
 
 
@@ -62,7 +62,7 @@
 
             ![stop-postgres](day-07/day-07-postgres-service-stop.png)
 
-        * Send heath request
+        * Send health request
 
             ![health-request-db-down](day-07/day-07-health-request-db-down.png)
 
@@ -77,11 +77,19 @@
 
 
     4. The README matches the config variables in the code.
+
+        |Config|README|Code|
+        |-|-|-|
+        |DB URL|jdbc:postgresql://localhost:5432/expenses|jdbc:postgresql://localhost:5432/expense_app_db|
+        |DB user|expense|expense_app|
+
     5. You can state the port, the config location and the secrets in one paragraph.
+
+    All configurations come from application.yaml and are documented in README.md
 
 
 ## What worked
-1. Preperaing apps dependency before hand, like api key and postgrest service instalation, while AI generated the code. This way, I optimized my time. I just had to change the configuration from my application after to match what I had configured.
+1. Preparing apps dependency before hand, like api key and install postgres server, while AI generated the code. This way, I optimized my time. I just had to change the configuration from my application after to match what I had configured.
 
 ## What did not work
 1. I tried creating the tables for postgres db manually, and that made the application fail when starting. 
@@ -90,4 +98,4 @@
 1. I connected to database, dropped the table and restarted the application. 
 
 ## What I would do differently
-1. Use a docker container to run the database would make it easier for future sessions, like "on repeat". 
+1. Use a docker container to run the database would make it easier for future sessions, like "on repeat".  Revisit in the Docker weeks. 

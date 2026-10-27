@@ -80,11 +80,11 @@
 
     The Local Address column shows the interface the server is bound to:`127.0.0.1:5432`, that means only the VM itself can connect to it, which is `listen_addresses = localhost` from PostgreSQL config in action.
 
-    ![network-cocket-port-5432](day-06/day-06-network-sockets.png)
+    ![network-socket-port-5432](day-06/day-06-network-sockets.png)
 
     * On Windows Powershell `Test-NetConnection <vm-ip> -Port 5432`
 
-    ![windows-connection](day-06/day-06-connecttion-from-windows.png)
+    ![windows-connection](day-06/day-06-connection-from-windows.png)
     
 
 ## What worked
