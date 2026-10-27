@@ -38,8 +38,8 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
 
 | Day | Outcome | Done when | Status | Log |
 |---|---|---|---|---|
-| Mon | PostgreSQL runs on the VM with its own database and user, reachable only from the VM | Service active and back after a reboot; the app's user can log in from the VM; a connection from Windows is refused; README names the database, the user and where the password is kept | In progress | `day-06-postgresql.md` |
-| Tue | The expense app is generated, reviewed and committed | Code and README in the repo; review notes cover the five points; I can explain in one paragraph how the app starts and what it needs | In progress | `day-07-generate-review-app.md` |
+| Mon | PostgreSQL runs on the VM with its own database and user, reachable only from the VM | Service active and back after a reboot; the app's user can log in from the VM; a connection from Windows is refused; README names the database, the user and where the password is kept | Done | `day-06-postgresql.md` |
+| Tue | The expense app is generated, reviewed and committed | Code and README in the repo; review notes cover the five points; I can explain in one paragraph how the app starts and what it needs | Done | `day-07-generate-review-app.md` |
 | Wed | The app builds into one jar and runs by hand against PostgreSQL | Health shows the database up; an expense is stored with its EUR amount; a request without the key returns 401; with the external service unreachable, `POST` returns 502 and the app keeps running | Planned | `day-08-build-run-app.md` |
 | Thu | The app runs as a systemd service under its own user | Active after a reboot; restarts after the process is killed; secrets file readable only by the service user and no secret in the repo or logs; request lines visible in `journalctl` | Planned | `day-09-systemd-service.md` |
 | Fri | Break it and fix it, week demo | Three failures (PostgreSQL stopped, port already in use, wrong secrets file permissions) found from the logs and fixed; after a reboot the app is back and its data is still there; "On repeat" complete | Planned | `day-10-break-and-fix.md` |
