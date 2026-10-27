@@ -31,11 +31,11 @@
 
     * `systemctl status postgresql@18-main` - show info on service of cluster version 18
 
-        ![cluster-18](day-06/day-06-postgresql-cluster-18-active.png)
-
     * `sudo reboot`
 
     * Check cluster is still active running `pg_lsclusters`
+
+    ![cluster-18-after-reboot](day-06/day-06-postgresql-cluster-18-active.png)
 
 3. Create the app’s database and a dedicated user.
 
@@ -78,6 +78,8 @@
 5. Database is not reachable from Windows
     * On VM list network sockets with `ss -tln | grep 5432`
 
+    The Local Address column shows the interface the server is bound to:`127.0.0.1:5432`, that means only the VM itself can connect to it, which is `listen_addresses = localhost` from PostgreSQL config in action.
+
     ![network-cocket-port-5432](day-06/day-06-network-sockets.png)
 
     * On Windows Powershell `Test-NetConnection <vm-ip> -Port 5432`
@@ -87,10 +89,10 @@
 
 ## What worked
 
-1. `du` shows an empty list of attributes for user `expense_app`, which means it has no privileges. It's different when compared to `postgres` user, which is a superuser and has all the privileges. 
+1. `\du` shows an empty list of attributes for user `expense_app`, which means it has no privileges. It's different when compared to `postgres` user, which is a superuser and has all the privileges. 
 
 ## What did not work
-1. Check information about postgres with `systemctl status postgres`. On Ubuntu, `postgresql.service` is an umbrella unit that exists so you can start or stop all clusters at once.
+1. Check information about postgres with `systemctl status postgresql`. On Ubuntu, `postgresql.service` is an umbrella unit that exists so you can start or stop all clusters at once. I saw `active (exited)` and understood that the database was running, but it doesn't control the databases, but all postgre clusters.
 
 ## How I solved it
 1. The real postgres service runs in a separate unit per cluster, named after the version and the cluster name. To check the version I installed was running I needed to use `systemctl status postgresql@18-main` .
