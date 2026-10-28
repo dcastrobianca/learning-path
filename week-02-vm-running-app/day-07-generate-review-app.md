@@ -39,12 +39,12 @@
         * GET /actuator/health
             ![health-get-request](day-07/day-07-health-request.png)
 
-        * POST /expense with valid parameters
+        * POST /expenses with valid parameters
             ![post-expense-valid](day-07/day-07-expense-post-request.png)
 
-        * POST /expense with invalid currency
+        * POST /expenses with invalid currency
             ![post-expense-bad-request](day-07/day-07-bad-request.png)
-        * GET /expense
+        * GET /expenses
             ![get-expense](day-07/day-07-expense-get-request.png)
 
 
@@ -73,7 +73,7 @@
             ![startup-fails-db-down](day-07/day-07-startup-db-down.png)
 
             Spring Boot applications that have Spring Data JPA will automatically look to create a database connection. 
-            If it cannot establish this connection, the application will fail, unless it's configured otherwise.
+            If it cannot establish this connection, the application will fail, unless it's configured otherwise. This is desired behabior, as without the database, the whole application functionality don't work. 
 
 
     4. The README matches the config variables in the code.
@@ -82,10 +82,11 @@
         |-|-|-|
         |DB URL|jdbc:postgresql://localhost:5432/expenses|jdbc:postgresql://localhost:5432/expense_app_db|
         |DB user|expense|expense_app|
+    
 
     5. You can state the port, the config location and the secrets in one paragraph.
 
-    All configurations come from application.yaml and are documented in README.md
+        The minimum set up for running the application is Java 25, PostgreSQL with a database and user and an api-key. If one of those is nor provided, the application don't start. The default configurations are provided to the application using application.yaml, but the values comes from environment variables. Secrets don't have a default value, like api-key and database password. To know wich environment variables exists and can be changed, refer to application README file. 
 
 
 ## What worked
