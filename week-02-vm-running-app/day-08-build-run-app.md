@@ -28,8 +28,6 @@
 
     * Install git
 
-        `add-apt-repository ppa:git-core/ppasudo add-apt-repository ppa:git-core/ppa` this PPA provides the latest stable upstream Git version
-
         `sudo apt install git`
 
 2. Build the jar
@@ -72,18 +70,35 @@
 
     * Request without valid key
 
-        `curl localhost:8080/expenses`
+        `curl -i localhost:8080/expenses`
 
-        ![invalid-key](day-08/day-08-undifined-api-key.png)
+        ![invalid-key](day-08/day-08-invalid-api-key.png)
 
-    * Invalid service address. 
-    
-        Add new environment variable and restarted app.
+5. Define invalid service address. 
+   * Service address that never answers.
+        * Add environment variable `export RATES_BASE_URL='http://10.255.255.1`
+        * Restart app
+        * Send request with response time and status line 
+            
+            `curl -X POST localhost:8080/expenses -H "X-API-Key: $EXPENSE_API_KEY"      -H 'Content-Type: application/json'      -d '{"description":"Lunch","amount":12.50,"currency":"USD"}' -w '\n%{time_total}s\n' -i`
         
-        `export RATES_BASE_URL='https://api.frankfurter.dev'`
+            ![invalid-service-address](day-08/day-08-error-502-timeout-invalid-service.png)
 
-        ![invalid-service-address](day-08/day-08-error-502-invalid-service.png)
+            Answer only comes after timeout of 3 seconds is reached.
 
+
+   * Service address refuses immediatly 
+        * Add environment variable `export RATES_BASE_URL='http://localhost:9`
+        * Restart app
+        * Send request with response time and status line 
+            
+            `curl -X POST localhost:8080/expenses -H "X-API-Key: $EXPENSE_API_KEY"      -H 'Content-Type: application/json'      -d '{"description":"Lunch","amount":12.50,"currency":"USD"}' -w '\n%{time_total}s\n' -i`
+        
+            ![invalid-service-address](day-08/day-08-error-502-immediate-refusal-invalid-service.png)
+
+            Answers comes right way with 502 error.
+    * Service is still running after error 502
+        ![running-app-after-502](day-08/day-08-app-running-after-error.png)
 
 ## What worked
 1. Restart the application after changing environment variables to reload configurations. I tested runing the application in the backgroug and changing the `RATES_BASE_URL` and sending a request, the return showed me that the configuration is not reloaded when a environment variable  changes.
@@ -113,7 +128,7 @@
             EXPENSE_API_KEY=my-api-key
         ```
     * Load secrets automatically in every session.
-        * `sudo nano ~/.bashrc`
+        * `nano ~/.bashrc`
         * Add to end of the file
         ```
             set -a
