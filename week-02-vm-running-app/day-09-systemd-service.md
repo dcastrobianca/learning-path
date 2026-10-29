@@ -84,9 +84,15 @@
 
     * Check service logs
 
-        `journalctl -u expense-api`
+        `journalctl -u expense-api -n 5 --no-pager -o cat`
 
         ![logs](day-09/day-09-journalctl-logs.png)
+
+    * Check if secrets are written in service logs
+
+        `   sudo bash -c 'source /etc/expense-api/expense-api.env; journalctl -u expense-api --no-pager | grep -cF -e "$EXPENSE_API_KEY" -e "$DB_PASSWORD_EXPENSE"'`
+
+        ![no-secrets-in-logs](day-09/day-09-no-secrets-logs.png)
     
 9. Crash test
     `sudo systemctl show -p MainPID --value expense-api`
@@ -108,6 +114,9 @@
     ```
     expense_key() { sudo grep '^EXPENSE_API_KEY=' /etc/expense-api/expense-api.env | cut -d= -f2-; }
     ```
+
+    
 3. Reload config and use new script in curl 
+    `curl localhost:8080/expenses -H "X-API-Key: $(expense_key)"`
 
     ![curl-request-with-script](day-09/day-09-curl-api-key.png)
