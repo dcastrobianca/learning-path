@@ -127,6 +127,21 @@
 
         ![up-and-running](day-10/day-10-up-running-with-jar-access.png)
 
+4. Reboot and week demo
+    * Reboot 
+        `sudo reboot`
+    * Check services status
+
+        `systemctl is-active expense-api postgresql@18-main`
+
+        ![api-and-db-active-after-reboot](day-10/day-10-api-and-db-active-after-reboot.png)
+
+    * Check data persistance
+
+        `curl localhost:8080/expenses -H "X-API-Key: $(expense_key)"`
+
+        ![data-saved-after-reboot](day-10/day-10-data-saved-after-reboot.png)
+
 ## What worked
 Finding the error using journalctl worked for all the erros I introduced. I could find the error directly writen in the logs. 
 
