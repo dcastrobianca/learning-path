@@ -106,7 +106,7 @@ After a VM reboot the expense app is back without a manual start, and its data i
 
 8. Create database and set owner
 
-    `CREATE DATABASE expense_app_db OWNER expense_app`
+    `CREATE DATABASE expense_app_db OWNER expense_app;`
 
 9. List databases
 
@@ -122,7 +122,8 @@ After a VM reboot the expense app is back without a manual start, and its data i
 
 12. Print connection information
 
-    `SELECT current_user, current_database()`
+    `SELECT current_user, current_database();`
+
     `\conninfo`
 
 13. Check use of port 5432
@@ -131,7 +132,7 @@ After a VM reboot the expense app is back without a manual start, and its data i
 
 14. Check access from windows machine to db server. Should fail because of PostgreSQL config `listen_addresses = localhost`
 
-    `Test-NetConnection 192.168.56.105 -Port 5432`
+    `Test-NetConnection <vm-ip> -Port 5432`
 
 15. Install Java
     
@@ -153,7 +154,7 @@ After a VM reboot the expense app is back without a manual start, and its data i
 
     * Access POM file folder
 
-        `cd /basic-expense-app/expense-api`
+        `cd ~/basic-expense-app/expense-api`
 
     * Build jar
 
@@ -245,6 +246,8 @@ After a VM reboot the expense app is back without a manual start, and its data i
     `nano ~/.bashrc`
 
     Add to end of file and remove previos session `expense_key() { sudo grep '^EXPENSE_API_KEY=' /etc/expense-api/expense-api.env | cut -d= -f2-; }`
+
+    With the change in permision from secret file, bashrc will not be able to access it whenerver the session is reload, as it was previously configure in step 18.
 
 27. Create expense-api service definition
 
