@@ -16,7 +16,7 @@
 
     ![after-timezone-set](day-10/day-10-timedate-after-set-timezone.png)
 
-2. PostgreSQL stooped
+2. PostgreSQL stoped
 
     * Deactivate PostgreSQL 
 
@@ -103,7 +103,7 @@
 
         `sudo systemctl restart expense-api`
 
-    * Check service healt and logs
+    * Check service health and logs
 
         `systemctl status expense-api`
 

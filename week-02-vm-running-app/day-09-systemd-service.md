@@ -17,10 +17,9 @@
     `--no-create-home` skips the home directory, since the service doesn’t need one.
     `--shell /usr/sbin/nologin` means nobody can log in as this user. It exists only so systemd can run the process under it.
 
-2. Create special build to run as systemd
-    `cd learning-path/basic-expense-app/expense-api`
+2. Create create application's own file path and move jar
 
-    `mvn package`
+    It should be separate from secrets to make possible have permissions set by directory. Follows convetion path. 
 
     `sudo mkdir -p /opt/expense-api`
 

@@ -15,9 +15,7 @@
 
         `sudo apt install openjdk-25-jdk-headless`
 
-        As the application will be build on the VM, the JDK is required. If the VM was responsible just to run the application, installing just JRE would be enough and would save disk space.
-
-        `sudo apt install openjdk-25-jre-headless`
+        As the application will be build on the VM, the JDK is required. If the VM was responsible just to run the application, installing just JRE would be enough and would save disk space : `sudo apt install openjdk-25-jre-headless`
 
         Check installation: `java -version`
 
@@ -31,6 +29,10 @@
         `sudo apt install git`
 
 2. Build the jar
+
+    * Clone repository
+
+        `git clone `
 
     * Access POM folder 
         

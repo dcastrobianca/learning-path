@@ -42,7 +42,7 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
     * `journalctl -u <service>`
     * `ssh <user>@<ip> -i ssh-private-key-file-path`
 - What I got wrong first:
-    * NAT and Host-only adapter don'e enable VM to receive request from internet.
+    * NAT and Host-only adapter don't enable VM to receive request from internet.
 
 
 ## On repeat
@@ -235,9 +235,7 @@ Each session is 40 minutes of hands-on work and 10 minutes of documentation, end
     
     * Fix config and restart service. Web server should be once again available
 
-
-
-
+17. Create a clone of VM to be used on on-repeat session of week 2.
 
 
 ## Weekly review
