@@ -99,9 +99,9 @@ A tool moves to the first list when it appears in a committed session, not befor
 
 | Week | Theme | Status |
 |---|---|---|
-| 1 | Linux VM: build, secure, run a web server, break and fix it | Done |
-| 2 | Linux VM, part 2: PostgreSQL, a small Spring Boot app, run as a systemd service | In progress |
-| 3 | Linux VM, part 3: nginx reverse proxy, firewall, backup and restore, failure drills | Planned |
+| 1 | Linux VM part 1: build, secure, run a web server, break and fix it | Done |
+| 2 | Linux VM, part 2: PostgreSQL, a small Spring Boot app, run as a systemd service | Done |
+| 3 | Linux VM, part 3: nginx reverse proxy, firewall, backup and restore, failure drills | In Progress |
 
 ## About
 
