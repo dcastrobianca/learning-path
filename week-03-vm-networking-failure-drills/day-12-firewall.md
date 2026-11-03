@@ -57,6 +57,8 @@
 
         `sudo ss -tlnp | grep 8080` shows that java is using the port 8080, so the connection was blocked by firewall. 
 
+        ![app-port-8080](day-12/day-12-app-port-8080.png)
+
     * POST /expense request. App can still connect to external rate service
 
         Returned 201, which means it managed to still connect to rate service, as it was expected by default allow outgoing trafic rule. 
