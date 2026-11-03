@@ -51,7 +51,7 @@
 
     * GET /expenses request to port 8080
 
-        Timeout before connection to the server, with error "Failed to connect to localhost port 8080 after 2205 ms: Couldn't connect to server", as expected by default deny incoming traffic rule.
+        Timeout before connection to the server, with error "Failed to connect to 192.168.56.105 port 8080 after 2205 ms: Couldn't connect to server", as expected by default deny incoming traffic rule.
 
         ![request-port-8080-after-firewall-enabled](day-12/day-12-firewall-enabled-get-request-port-8080.png)
 
