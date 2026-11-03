@@ -27,8 +27,8 @@ Each session is 60 minutes: 10 minutes concept check, 40 minutes hands-on, 10 mi
 
 | Day | Outcome | Done when | Status | Log |
 |---|---|---|---|---|
-| Mon | nginx runs as a reverse proxy in front of the app | From Windows, the app answers through nginx on port 80 | In progress | `day-11-nginx-reverse-proxy.md` |
-| Tue | The app's own port is closed to outside traffic | The app's own port is unreachable from Windows; the app still answers through nginx | Planned | `day-12-firewall.md` |
+| Mon | nginx runs as a reverse proxy in front of the app | From Windows, the app answers through nginx on port 80 | Done | `day-11-nginx-reverse-proxy.md` |
+| Tue | The app's own port is closed to outside traffic | The app's own port is unreachable from Windows; the app still answers through nginx | Done | `day-12-firewall.md` |
 | Wed | The database is backed up and restored | The database is restored from a dump; the app works afterwards | Planned | `day-13-database-backup-restore.md` |
 | Thu | Network failure drills | A stopped app returns 502, a stalled app returns 504, and the logs show each cause | Planned | `day-14-failure-drills.md` |
 | Fri | Break it and fix it, week demo | After a VM reboot the app is back through nginx without a manual start; the README "On repeat" section repeats the whole setup | Planned | `day-15-week-demo.md` |
@@ -42,7 +42,15 @@ _Fill in on Friday: from Windows, the app is reachable through nginx and not thr
 _Fill in at the end of the week._
 
 - Key concepts:
-    * _pending_
+    * Firewall rules
+
+        |Rule|	Direction|	Why it exists|
+        |-|-|-|
+        |allow ssh|	incoming |	Remote management of the VM|
+        |allow 80 |	incoming |	Windows reaches the app through nginx|
+        |default deny|	incoming|	Anything without an explicit allow is closed, including the app’s port 8080|
+        |default allow|	outgoing|	The rate service and package updates need outbound access|
+
 - Commands I now know without looking them up:
     * _pending_
 - What I got wrong first:

@@ -51,9 +51,11 @@
 
     * GET /expenses request to port 8080
 
-        Connection refuse, as expected by default deny incoming traffic rule.
+        Timeout before connection to the server, with error "Failed to connect to localhost port 8080 after 2205 ms: Couldn't connect to server", as expected by default deny incoming traffic rule.
 
         ![request-port-8080-after-firewall-enabled](day-12/day-12-firewall-enabled-get-request-port-8080.png)
+
+        `sudo ss -tlnp | grep 8080` shows that java is using the port 8080, so the connection was blocked by firewall. 
 
     * POST /expense request. App can still connect to external rate service
 
@@ -70,4 +72,4 @@
     ![enable-warning](day-12/day-12-enable-warning.png)
 
 ## What I would do differently
-1. I added both rules withour number. If a rule is added after this configuration with `ufw insert 1 ...` and affects ssh port, I could be locked out of my VM. To avoid this specific problem I'd do `sudo ufw insert 1 allow ssh`.
+1. I added both rules withour number. If a rule is added after this configuration with `ufw insert 1 ...` and affects ssh port, I could be locked out of my VM. To avoid this specific problem I'd do `sudo ufw insert 1 allow ssh` and don't add any rule above it that might block ssh connect.
