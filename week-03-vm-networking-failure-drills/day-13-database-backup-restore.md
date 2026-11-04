@@ -4,7 +4,7 @@
 
 **Done when:** 
 1) A backup file exists outside the database's data directory. 
-2) After the stored expenses are deleted, restoring brings the same rows back. 
+2) After restoring into a new database, it brings the same rows back. 
 3) README states how the backup is taken and where it is kept.
 
 ## What I did
