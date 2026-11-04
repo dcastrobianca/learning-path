@@ -53,10 +53,18 @@ _Fill in at the end of the week._
     * Database backup:
 
         How to use `pg_dump` to create a plain-text file of SQL statements that can be used to create a the database in the same state as it was at the time of the dump. It is stored in a simple sql file, and differently from a physical copy, can be used in newer versions of PostgreSQL and different system architecture. 
+        
+        Commands example:        
+        * `pg_dump dbname > dumpfile`: create a backup file
 
-        `pg_dump dbname > dumpfile`: create a backup file
+        * `psql -X dbname < dumpfile`: applies the sql commands to recreate the database. 
 
-        `psql -X dbname < dumpfile`: applies the sql commands to recreate the database. 
+        My VM:
+        * Backup: `pg_dump -h localhost -U expense_app -d expense_app_db -f backup-<date>.sql` (use -h localhost, because the socket connection uses peer authentication and fails for this role).
+
+        * Where: `/home/bianca/`, outside the PostgreSQL data directory.
+
+        * Restore: `psql -X --set ON_ERROR_STOP=on expense_app_db_2 < backup-2026-11-04.sql -h localhost -U expense_app`
 
 
 - Commands I now know without looking them up:
