@@ -50,6 +50,14 @@ _Fill in at the end of the week._
         |allow 80 |	incoming |	Windows reaches the app through nginx|
         |default deny|	incoming|	Anything without an explicit allow is closed, including the app’s port 8080|
         |default allow|	outgoing|	The rate service and package updates need outbound access|
+    * Database backup:
+
+        How to use `pg_dump` to create a plain-text file of SQL statements that can be used to create a the database in the same state as it was at the time of the dump. It is stored in a simple sql file, and differently from a physical copy, can be used in newer versions of PostgreSQL and different system architecture. 
+
+        `pg_dump dbname > dumpfile`: create a backup file
+
+        `psql -X dbname < dumpfile`: applies the sql commands to recreate the database. 
+
 
 - Commands I now know without looking them up:
     * _pending_

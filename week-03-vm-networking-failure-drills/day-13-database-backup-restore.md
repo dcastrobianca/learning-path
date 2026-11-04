@@ -18,7 +18,9 @@
 
     ![create-backup-with-password-auth](day-13/day-13-backup.png)
 
-    Backup file was store in my users directory.
+    Backup file was store in `/home/bianca/backup-2026-11-04.sql`.
+
+    ![backup-full-path](day-13/day-13-backup-path.png)
 
 3. Create a new database
     * Login as superuser
@@ -66,6 +68,8 @@
 6. GET /expenses shows same list
 
     ![list-expense-after-backup](day-13/day-13-list-expenses-after-backup.png)
+
+7. Change DB back to original one using step 5 and removing DB_URL configuration. 
 
 
 ## What worked
