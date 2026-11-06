@@ -11,7 +11,7 @@
 1. Run baseline request that goes though the full path: From windows, through Nginx, to app to external rate service.
     * POST /expenses should return 201
 
-        `curl -X POST localhost:8080/expenses -H "X-API-Key: $EXPENSE_API_KEY" -H 'Content-Type: application/json' -d '{"description":"Lunch","amount":12.50,"currency":"USD"}'`
+        `curl -X POST 192.168.56.105/expenses -H "X-API-Key: $EXPENSE_API_KEY" -H 'Content-Type: application/json' -d '{"description":"Lunch","amount":12.50,"currency":"USD"}'`
 
     ![baseline-results201](day-14/day-14-baseline-req-before-drills.png)
 2. Stop app and find cause in Nginx logs
