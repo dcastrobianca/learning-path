@@ -52,7 +52,7 @@
         * `curl http://192.168.56.105/actuator/health`: retuns services status
         * `curl 192.168.56.105/expenses -H "X-API-Key: $EXPENSE_API_KEY"`: returns list of expenses saved in database.
 
-3. Service unablalable returns error
+3. Service unavailable returns error
     * Stop expense-api service
 
         `sudo systemctl stop expense-api`
@@ -63,7 +63,7 @@
 
         ![service-error-502](day-11/day-11-service-unaccessible-windows.png)
 
-    * Restart expense-api service. Should be accessible withou touching Nginx
+    * Restart expense-api service. Should be accessible without touching Nginx
 
         `sudo systemctl start expense-api`
 
