@@ -118,7 +118,7 @@ Each session is 60 minutes: 10 minutes concept check, 40 minutes hands-on, 10 mi
 
 2. Create DB user
 
-    `sudo psql -u postgres`
+    `sudo -u postgres psql`
 
     `CREATE ROLE expense_app LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE;`
 
@@ -146,8 +146,6 @@ Each session is 60 minutes: 10 minutes concept check, 40 minutes hands-on, 10 mi
 
     `Test-NetConnection 192.168.56.105 -Port 5432`
 
-    ping succeeded but connection fail. 
-
 6. Create secrets file
 
     `sudo mkdir -p /etc/expense-api`
@@ -155,7 +153,7 @@ Each session is 60 minutes: 10 minutes concept check, 40 minutes hands-on, 10 mi
     `sudo install -m 600 -o bianca -g bianca /dev/null /etc/expense-api/expense-api.env`
 
     `set a-`
-    `sudo source /etc/expense-api/expense-api.env`
+    `source /etc/expense-api/expense-api.env`
     `set a+`
 
     `[ -n "$EXPENSE_API_KEY" ] && echo set || echo missing`
@@ -167,7 +165,7 @@ Each session is 60 minutes: 10 minutes concept check, 40 minutes hands-on, 10 mi
 
     `java -version`
 
-    `sudo apt instal maven`
+    `sudo apt install maven`
 
     `mvn -version`
 
@@ -465,14 +463,6 @@ Each session is 60 minutes: 10 minutes concept check, 40 minutes hands-on, 10 mi
         `sudo ufw status numbered` - check rules for blocking rate service api
 
         `sudo ufw delete <rule-number>` - delete all rules except for ssh and port 80.
-
-
-
-
-
-
-
-
 
 ## Weekly review
 
