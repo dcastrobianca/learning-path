@@ -21,7 +21,7 @@ This repository is:
 The method follows a simple weekly cycle.
 
 1. **Sunday: plan.** I define a specific, testable outcome for each session (what I will build or deploy) and a "done when" check that is either true or false.
-2. **Each session has four parts.** Foundation reading, a short concept check on the key ideas, hands-on work, and documentation: what I deployed, what worked, what did not, and how I solved it. A session takes 50 to 60 minutes, and the reading happens inside it.
+2. **Each session has four parts.** Foundation reading, a short concept check on the key ideas, hands-on work, and documentation: what I deployed, what worked, what did not, and how I solved it. A session takes 55 to 90 minutes, and the reading happens inside it.
 3. **Every session ends with a commit** to this repository.
 4. **Weeks with something to break end with deliberate debugging.** I break the setup on purpose and fix it, to build troubleshooting muscle memory.
 5. **Sunday: review.** I compare plan and reality, then adjust the next week. Some weeks have fewer than five sessions, and the plan moves with my real schedule rather than being squeezed.
@@ -35,7 +35,7 @@ Theory (system design and software architecture) and German language study run a
 
 | Phase | Weeks | Dates | Hands-on focus | Status |
 |---|---|---|---|---|
-| 1. Foundations | 1-7 | Oct 19 - Dec 6 | Linux VM and manual deployment of a small Spring Boot app with PostgreSQL (3 weeks), Azure basics and the same app on an Azure VM, Azure CLI and Terraform, Docker, then Docker Compose, a container registry and GitHub Actions | In progress |
+| 1. Foundations | 1-7 | Oct 19 - Dec 6 | Linux VM and manual deployment of a small Spring Boot app with PostgreSQL (3 weeks), Azure basics and a first Azure VM, the same app on that VM, Azure CLI and Terraform, Docker, then Docker Compose, a container registry and GitHub Actions | In progress |
 | 2. Kubernetes | 8-15 | Dec 7 - Jan 31 | Local Kubernetes, then AKS provisioned with Terraform and deployed from CI (two holiday weeks at half load) | Planned |
 | 3. Platform | 16-23 | Feb 1 - Mar 28 | Helm, Argo CD, dev and staging environments, observability, a multi-tenant Spring Boot service on the platform | Planned |
 | 4. Hardening and documentation | 24-27 | Mar 29 - Apr 25 | Secrets management, cost cleanup, architecture documentation, project walkthrough | Planned |
@@ -43,7 +43,7 @@ Theory (system design and software architecture) and German language study run a
 The detailed plan is re-planned weekly, so this table shows direction rather than a fixed schedule. Two examples:
 
 - The Linux VM work grew from one week to three when I decided to practice with a realistic application (a database, an API key and an external service) instead of a hello-world, and everything after it moved one week later.
-- Week 4 has only three sessions. Deploying the app to an Azure VM therefore moved to week 5, the Azure CLI and Terraform to week 6, and Docker to week 7. Where Docker Compose, the container registry and GitHub Actions land, and whether Phase 1 grows by a week, is decided in the week 7 review.
+- Week 4 has four sessions and no Friday, so I made the Wednesday and Thursday sessions 90 minutes each and created the first Azure VM in week 4 instead of week 5. Week 5 therefore deploys the app on that VM, the Azure CLI and Terraform moved to week 6, and Docker to week 7. Where Docker Compose, the container registry and GitHub Actions land, and whether Phase 1 grows by a week, is decided in the week 7 review.
 
 ## Repository structure
 
@@ -66,7 +66,7 @@ The detailed plan is re-planned weekly, so this table shows direction rather tha
 Conventions:
 
 - One folder per week, named `week-NN-topic`.
-- One log file per session, named `day-NN-topic.md`, with a matching `day-NN/` folder for its screenshots and small files. Day numbers count sessions, not calendar days, so a week with three sessions uses three numbers.
+- One log file per session, named `day-NN-topic.md`, with a matching `day-NN/` folder for its screenshots and small files. Day numbers count sessions, not calendar days, so a week with four sessions uses four numbers.
 - Configuration files, scripts and Terraform code live next to the log that introduced them, and move into a dedicated folder once a project outgrows a single week.
 - No secrets, keys or credentials are ever committed.
 
@@ -94,9 +94,9 @@ Commands, configuration or portal steps, in order.
 
 ## Tools and technologies
 
-Used so far: Ubuntu Server, VirtualBox, netplan, apt, SSH, systemd and journalctl, PostgreSQL, Java and Maven, a Spring Boot service, nginx, ufw, pg_dump and pg_restore, curl.
+Used so far: Ubuntu Server, VirtualBox, netplan, apt, SSH, systemd and journalctl, PostgreSQL, Java and Maven, a Spring Boot service, nginx, ufw, pg_dump and pg_restore, curl, the Azure portal (subscriptions, Cost Management budgets, resource groups, tags).
 
-Planned: Azure (portal, Cost Management budgets, resource groups, VMs, CLI), Terraform, Docker, Docker Compose, GitHub Actions, Kubernetes (local and AKS), Helm, Argo CD.
+Planned: Azure (VMs, role assignments, CLI), Terraform, Docker, Docker Compose, GitHub Actions, Kubernetes (local and AKS), Helm, Argo CD.
 
 A tool moves to the first list when it appears in a committed session, not before.
 
@@ -107,7 +107,7 @@ A tool moves to the first list when it appears in a committed session, not befor
 | 1 | Linux VM part 1: build, secure, run a web server, break and fix it | Done |
 | 2 | Linux VM, part 2: PostgreSQL, a small Spring Boot app, run as a systemd service | Done |
 | 3 | Linux VM, part 3: nginx reverse proxy, firewall, backup and restore, failure drills | Done |
-| 4 | Azure basics: account, budget, resource group and hierarchy (three sessions) | In progress |
+| 4 | Azure basics: account, budget, resource group, hierarchy and a first VM (four sessions) | In progress |
 
 ## About
 
