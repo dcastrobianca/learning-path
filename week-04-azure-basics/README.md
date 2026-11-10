@@ -56,7 +56,11 @@ _To fill on Thursday: three screenshots, each with one line on what it proves._
 _To fill on Thursday._
 
 - Key concepts:
-    * 
+    * Azure scope:
+        * Management group: subscriptions, and other management groups.
+        * Subscription: resource groups, and the billing relationship.
+        * Resource group: resources that share a lifecycle.
+        * Resource: one instance of a service, such as a VM or a storage account.
 - Portal paths I now know without looking them up:
     * 
 - What I got wrong first:
