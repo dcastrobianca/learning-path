@@ -36,5 +36,12 @@
     ![create-alerts](day-16/day-16-create-alerts.png)
 
 
+4. Check budget on the list
+
+    ![budget-created](day-16/day-16-budget.png)
+
 ## What worked
 1. Creating budget and alerts together. There is a Cost Alert menu, but they are for anomaly dectection in subscription scope. 
+
+## What did not work
+Nothing to report here.
