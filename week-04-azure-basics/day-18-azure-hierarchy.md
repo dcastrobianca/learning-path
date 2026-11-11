@@ -1,4 +1,4 @@
-# Day 18: <topic>
+# Day 18: Azure hierarchy and a budget on the resource group
 
 **Outcome:** Every level of the hierarchy located for my own resources, where a role assignment can be made identified, and a budget scoped to the resource group created.
 
@@ -24,6 +24,8 @@
     All resources >Organization > Management groups > List of management group > search by id 
 
     ![management-group](day-18/day-18-management-group.png)
+
+    So my current hierarchy is : Tenant Root Group > Azure subscription 1 > day-17-azure-resource-group.
 
 2. Find where a role assignment would be made at resource group level and at subscription level (view only, assign nothing)
 
