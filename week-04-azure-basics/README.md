@@ -34,7 +34,7 @@ Mon and Tue are 55 minutes each: 10 minutes of foundation reading, 10 minutes of
 |---|---|---|---|---|
 | Mon | An Azure subscription I can sign in to, with a monthly budget that emails me before I overspend | I sign in to the portal and see my subscription; a monthly budget exists on the subscription with alerts at 80% and 100%; the alert emails go to my address | Done | `day-16-azure-account-budget.md` |
 | Tue | A tagged resource group created in the portal | A resource group exists in a region I chose; it has at least one tag; I find it and its tag in the portal | Done | `day-17-azure-resource-group.md` |
-| Wed | Every level of the hierarchy located for my own resources, where a role assignment is made identified, and a budget on the resource group | I show the resource group, its subscription and the management group above it; I show where a role assignment is made at both levels and which of my access is inherited; a budget exists on the resource group only, with an alert at 100%; three open questions are written down | Done | `day-18-azure-hierarchy.md` |
+| Wed | Every level of the hierarchy located for my own resources, where a role assignment is made identified, and a budget on the resource group | I show the resource group, its subscription and the management group above it; I show where a role assignment is made at both levels and which of my access is inherited; a budget exists on the resource group only, with an alert at 100% | Done | `day-18-azure-hierarchy.md` |
 | Thu | A Linux VM in my resource group that I can reach over SSH from Windows, then stopped so it does not use my credit | The VM exists in my resource group with SSH key login; I connect from Windows and run `hostnamectl`; I name every resource created alongside the VM; the VM is stopped (deallocated) and auto-shutdown is set | Planned | `day-19-azure-linux-vm.md` |
 
 Foundation reading, each done inside its session:
@@ -69,10 +69,6 @@ _To fill on Thursday._
     * 
 - What I got wrong first:
     * 
-- Three questions I cannot answer yet about the hierarchy:
-    1. 
-    2. 
-    3. 
 
 ## On repeat
 
