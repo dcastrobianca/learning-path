@@ -14,36 +14,37 @@ This repository is:
 
 - a **learning log**: honest notes, including failures and dead ends
 - a **portfolio**: working configurations and documentation I can walk through in a conversation
-- a **habit tracker**: the commit history shows consistency over six months
+- a **habit tracker**: the commit history shows consistency over eight months
 
 ## How I work
 
 The method follows a simple weekly cycle.
 
-1. **Sunday: plan.** I define a specific, testable outcome for each session (what I will build or deploy) and a "done when" check that is either true or false.
+1. **Saturday: plan.** I define a specific, testable outcome for each session (what I will build or deploy) and a "done when" check that is either true or false.
 2. **Each session has four parts.** Foundation reading, a short concept check on the key ideas, hands-on work, and documentation: what I deployed, what worked, what did not, and how I solved it. A session takes 55 to 90 minutes, and the reading happens inside it.
 3. **Every session ends with a commit** to this repository.
 4. **Weeks with something to break end with deliberate debugging.** I break the setup on purpose and fix it, to build troubleshooting muscle memory.
-5. **Sunday: review.** I compare plan and reality, then adjust the next week. Some weeks have fewer than five sessions, and the plan moves with my real schedule rather than being squeezed.
+5. **Saturday: review.** I compare plan and reality, then adjust the next week. Some weeks have fewer than five sessions, and the plan moves with my real schedule rather than being squeezed.
 6. **Every week's README ends with an "On repeat" section** that lists every command or portal step of the week. I check it by rebuilding the setup from the notes alone.
 
 Application code is not the focus of this repository. For the practice application I generate a small Spring Boot service with AI and review it myself, so my time goes into running, securing and fixing it.
 
 Theory (system design and software architecture) and German language study run alongside this, outside the repository.
 
-## Roadmap (about six months)
+## Roadmap (about eight months)
 
 | Phase | Weeks | Dates | Hands-on focus | Status |
 |---|---|---|---|---|
-| 1. Foundations | 1-7 | Oct 19 - Dec 6 | Linux VM and manual deployment of a small Spring Boot app with PostgreSQL (3 weeks), Azure basics and a first Azure VM, the same app on that VM, Azure CLI and Terraform, Docker, then Docker Compose, a container registry and GitHub Actions | In progress |
-| 2. Kubernetes | 8-15 | Dec 7 - Jan 31 | Local Kubernetes, then AKS provisioned with Terraform and deployed from CI (two holiday weeks at half load) | Planned |
-| 3. Platform | 16-23 | Feb 1 - Mar 28 | Helm, Argo CD, dev and staging environments, observability, a multi-tenant Spring Boot service on the platform | Planned |
-| 4. Hardening and documentation | 24-27 | Mar 29 - Apr 25 | Secrets management, cost cleanup, architecture documentation, project walkthrough | Planned |
+| 1. Foundations | 1-9 | Oct 19 - Dec 20 | Linux VM and manual deployment of a small Spring Boot app with PostgreSQL (3 weeks), Azure basics, an Azure VM and the same app on it (weeks 4-5), Azure CLI and Terraform (weeks 6-7), Docker, Docker Compose, a container registry and a GitHub Actions build and push (weeks 8-9) | In progress |
+| 2. Data and Kubernetes | 12-21 | Jan 4 - Mar 14 | Kubernetes locally, then AKS provisioned with Terraform, deployment from GitHub Actions, cost review and a full demo (weeks 10-11 are holiday buffer weeks) | Planned |
+| 3. Platform | 22-32 | Mar 15 - May 30 | Helm, Argo CD, dev and staging environments, observability, a multi-tenant Spring Boot service on the platform | Planned |
+| 4. Hardening and documentation | 33-36 | May 31 - Jun 27 | Secrets management with Key Vault, cost cleanup, architecture documentation, project walkthrough | Planned |
 
-The detailed plan is re-planned weekly, so this table shows direction rather than a fixed schedule. Two examples:
+The detailed plan is re-planned weekly, so this table shows direction rather than a fixed schedule. Three examples:
 
 - The Linux VM work grew from one week to three when I decided to practice with a realistic application (a database, an API key and an external service) instead of a hello-world, and everything after it moved one week later.
-- Week 4 has four sessions and no Friday, so I made the Wednesday and Thursday sessions 90 minutes each and created the first Azure VM in week 4 instead of week 5. Week 5 therefore deploys the app on that VM, the Azure CLI and Terraform moved to week 6, and Docker to week 7. Where Docker Compose, the container registry and GitHub Actions land, and whether Phase 1 grows by a week, is decided in the week 7 review.
+- Week 4 was planned to end with the first Azure VM on Thursday. That session did not happen, so the VM moved to Wednesday of week 5, and week 5 has three sessions (Wednesday, Thursday and Saturday) instead of five.
+- In November I reduced the weekly study time to 1h30 per day and added a Saturday block for review and "on repeat". The plan now ends in June instead of April, and no topic was cut: when I am behind I move the date, not the depth.
 
 ## Repository structure
 
@@ -60,6 +61,7 @@ The detailed plan is re-planned weekly, so this table shows direction rather tha
 ├── week-02-vm-running-app/
 ├── week-03-vm-networking-failure-drills/
 ├── week-04-azure-basics/
+├── week-05-azure-vm-expense-app/
 └── ...
 ```
 
@@ -94,7 +96,7 @@ Commands, configuration or portal steps, in order.
 
 ## Tools and technologies
 
-Used so far: Ubuntu Server, VirtualBox, netplan, apt, SSH, systemd and journalctl, PostgreSQL, Java and Maven, a Spring Boot service, nginx, ufw, pg_dump and pg_restore, curl, the Azure portal (subscriptions, Cost Management budgets, resource groups, tags).
+Used so far: Ubuntu Server, VirtualBox, netplan, apt, SSH, systemd and journalctl, PostgreSQL, Java and Maven, a Spring Boot service, nginx, ufw, pg_dump and pg_restore, curl, the Azure portal (subscriptions, Cost Management budgets, resource groups, tags, management groups, access control (IAM) in view-only mode).
 
 Planned: Azure (VMs, role assignments, CLI), Terraform, Docker, Docker Compose, GitHub Actions, Kubernetes (local and AKS), Helm, Argo CD.
 
@@ -107,7 +109,8 @@ A tool moves to the first list when it appears in a committed session, not befor
 | 1 | Linux VM part 1: build, secure, run a web server, break and fix it | Done |
 | 2 | Linux VM, part 2: PostgreSQL, a small Spring Boot app, run as a systemd service | Done |
 | 3 | Linux VM, part 3: nginx reverse proxy, firewall, backup and restore, failure drills | Done |
-| 4 | Azure basics: account, budget, resource group, hierarchy and a first VM (four sessions) | In progress |
+| 4 | Azure basics: account, budget, resource group, hierarchy (four sessions planned, three done; the first VM moved to week 5) | Done |
+| 5 | Azure VM: create it in the portal, run the expense app on it, nginx and a network security group (three sessions) | In progress |
 
 ## About
 
