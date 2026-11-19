@@ -94,6 +94,12 @@
 
         ![connect-portal](day-19/day-19-connecting-ssh.png)
 
+    * Remove inboud fot HTTP in port 80
+
+        All resources > week-5 > my-network-security-group > delete rule
+
+        ![nsg](day-19/day-19-network-security-group.png)
+
 3. Connect to the VM over SSH from Windows
    
     * Connect 
