@@ -10,7 +10,8 @@
 5) The README documents what I did, what worked, what did not, and what differed from the local VM.
 
 ## What I did
-0. Package manageme update and upgrade
+0. Connect with SHH and handle package management update and upgrade
+    `ssh -i <private-key-patj> bianca@<new-public-ip>` 
 
     `sudo apt update && sudo apt upgrade`
 
@@ -197,15 +198,15 @@
 
 ## Difference from Local VM
 
-|Condition|Local VM |Azure|
+|Condition|Azure |Local VM|
 |-|-|-|
 |Ubuntu| 24.04.5| 26.4.1|
 |ssh conection| Public IP and network rules from Network Security Group| host-only adapter and ufw rules|
 |PostgreSQL|16.15|  18|
-|sudo| requires password set while creating VM| passwordless sudo for my user|
+|sudo| passwordless sudo for my user| requires password set while creating VM|
 
 ## What worked
-1. Repeating the same process to deploy the app in azure VM as for local. The only difference was the cluster version available for PostgreSQL, but it didn't create impacts on the commands to create role and database.
+1. Repeating the same process to deploy the app in azure VM as for local. There were just small diferences mantioned above, but most commands stayed the same as for local machine. 
 
 ## What did not work
 Nothing to report here.
