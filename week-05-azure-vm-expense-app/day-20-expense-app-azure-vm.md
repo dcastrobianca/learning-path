@@ -206,7 +206,7 @@
 |sudo| passwordless sudo for my user| requires password set while creating VM|
 
 ## What worked
-1. Repeating the same process to deploy the app in azure VM as for local. There were just small diferences mantioned above, but most commands stayed the same as for local machine. 
+1. Repeating the same process to deploy the app in azure VM as for local. There were just small diferences mantioned above, but most commands stayed the same as for local machine.
 
 ## What did not work
 Nothing to report here.
