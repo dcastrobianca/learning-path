@@ -18,14 +18,15 @@
 
 1. Create a Linux VM (Ubuntu Server LTS, smallest size available) in my resource group and region
 
+    The following decisions were made to have the cheapest cost within my quota. 
+
     * Virtual machines > Create > Virtual machine > Basic
 
         Select subscription and resource group 
 
         Name: day-19-azure-linux-vm
 
-        Select Region 
-
+        Select Region "Germany West Central"
 
         Set Availability options to "No infrastructure redundancy required"
 
@@ -39,7 +40,7 @@
 
         Set SSH public key source as "Generate new key pair"
 
-        Set SSH KEy type as "Ed25519 SSH Format"
+        Set SSH Key type as "Ed25519 SSH Format"
 
         Key pair name: day-19-azure-linux-vm_key
 
@@ -141,6 +142,7 @@
     ![status-stopped-deallocated](day-19/day-19-status-stopped-deallocated.png)
 
 ## What worked
+1. Azure created all minimum necessary resources that I need to run a VM, instead of me having to create and configure them all manually, like for my local VM. This helps, as part of the complexity is abstracted by Azure as a provider. 
 
 ## What did not work
 1. While creating VM, the validation failed
@@ -148,10 +150,12 @@
     ![validation-fails](day-19/day-19-validation-fails.png)
 
     The machine size I choose initially to create was not available in my quota. 
-2. While creating a first VM, I didn't enabled public IP address and was not able to connect to is from my computer, as it is not inside the Virtual network. 
+2. While creating a first VM, I didn't enabled public IP address and was not able to connect to is from my computer, as it is not inside the Virtual network. So I deleted the first created group of resource and did the process again, enabling public IP. 
 
 ## How I solved it
 1. I checked the quota available and select a region that I had quota. I created a new resource group and a VM in this region (Germany West Central), than the validation passed.
 2. I had two options: connect my computer to virtual network using AzureVPN Gateway or create a VM with a public IP address. I choose the second, as it is simpler. It's not the most secure way, and will change on later on phases, once I have more to protect. 
 
 ## What I would do differently
+1. Check my quota before attempting to create a VM
+2. Enable public IP upfront
