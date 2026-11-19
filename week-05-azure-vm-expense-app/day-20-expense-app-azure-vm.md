@@ -142,7 +142,8 @@
 
         `nano ~/.bashrc`
 
-        Add to end of file and remove previos session `expense_key() { sudo grep '^EXPENSE_API_KEY=' /etc/expense-api/expense-api.env | cut -d= -f2-; }`
+        Add to end of file`expense_key() { sudo grep '^EXPENSE_API_KEY=' /etc/expense-api/expense-api.env | cut -d= -f2-; }`.
+        Remove " set -a... set +a" as it will fail  because env file became root:root.
 
     * Create user to run app 
 
@@ -189,6 +190,19 @@
         `journalctl -u expense-api -o cat --no-page -n 10`
 
         ![journalctl](day-20/day-20-journalctl.png)
+
+5. Stop VM on azure portal to avoid unecessary expenses
+
+    ![deallocated](day-20/day-20-stopped-deallocated.png)
+
+## Difference from Local VM
+
+|Condition|Local VM |Azure|
+|-|-|-|
+|Ubuntu| 24.04.5| 26.4.1|
+|ssh conection| Public IP and network rules from Network Security Group| host-only adapter and ufw rules|
+|PostgreSQL|16.15|  18|
+|sudo| requires password set while creating VM| passwordless sudo for my user|
 
 ## What worked
 1. Repeating the same process to deploy the app in azure VM as for local. The only difference was the cluster version available for PostgreSQL, but it didn't create impacts on the commands to create role and database.
